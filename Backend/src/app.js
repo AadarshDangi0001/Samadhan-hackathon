@@ -42,9 +42,6 @@ app.use(cors({
 
 app.use(cookieParser());
 
-// Handle preflight requests explicitly
-app.options('*', cors());
-
 // Additional security headers
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -69,8 +66,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/chat', chatRouter);
 app.use('/api/post',postRouter);
 
-// 404 handler
-app.use('*', (req, res) => {
+// 404 handler - catch all unmatched routes
+app.use((req, res) => {
     console.log(`404 - Route not found: ${req.method} ${req.originalUrl}`);
     res.status(404).json({ 
         error: 'Route not found',

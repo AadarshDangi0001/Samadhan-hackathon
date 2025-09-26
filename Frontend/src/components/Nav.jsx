@@ -89,6 +89,11 @@ const Nav = () => {
                <i class="ri-gamepad-line"></i>
                 <p>Games</p>
               </NavLink>
+              
+               <NavLink to="/emotion-tracker" onClick={handleLinkClick} className={({ isActive }) => isActive ? "active docs" : "docs"}>
+                <i class="ri-camera-lens-fill"></i>
+                <p>Emotion Tracker</p>
+              </NavLink>
 
               <NavLink to="/scan-docs" onClick={handleLinkClick} className={({ isActive }) => isActive ? "active docs" : "docs"}>
                 <i className="ri-camera-line"></i>

@@ -16,6 +16,7 @@ const ScanDocs = ({ title }) => {
   const [capturedImage, setCapturedImage] = useState(null);
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
   // ✅ Desktop camera
   const openDesktopCamera = async () => {
@@ -117,12 +118,30 @@ const ScanDocs = ({ title }) => {
       // backend createPostController returns { message, post: { caption } }
       const caption = result?.post?.caption || result?.caption || result?.summary;
       setSummary(caption || "No summary found.");
+  setLastUpdated(new Date());
     } catch (err) {
       console.error("Upload error:", err);
       setSummary("❌ Error while summarizing document. Please try again.");
     } finally {
       setLoading(false);
     }
+  };
+
+  const copySummary = async () => {
+    try {
+      const text = summary || "";
+      await navigator.clipboard.writeText(text);
+      // small UX feedback
+      alert("Summary copied to clipboard");
+    } catch (e) {
+      console.error("Copy failed", e);
+      alert("Copy failed");
+    }
+  };
+
+  const clearSummary = () => {
+    setSummary("");
+    setLastUpdated(null);
   };
 
   // Handle file input click
@@ -278,16 +297,25 @@ const ScanDocs = ({ title }) => {
 
           </div>
           {/* ✅ Output */}
-          <div className="out-text">
-            <p>Output</p>
-          </div>
+          {/* <div className="out-text">
+            <div style={{ display: 'flex',  alignItems: 'center', gap: '12px' }}>
+              <p style={{ margin: 0 }}>Output</p>
+              <div className="output-actions">
+                <button className="output-btn" onClick={copySummary} disabled={!summary || loading}>Copy</button>
+                <button className="output-btn alt" onClick={clearSummary} disabled={!summary && !loading}>Clear</button>
+              </div>
+            </div>
+            {lastUpdated && (
+              <div style={{ fontSize: 12, color: '#64748b', marginTop: 6 }}>Updated: {lastUpdated.toLocaleString()}</div>
+            )}
+          </div> */}
           <div className="output">
             {loading ? (
               <p>⏳ Summarizing...</p>
             ) : (
-              <p>{renderSummaryWithBold(summary)}</p>
+              <div className="output-content">{renderSummaryWithBold(summary)}</div>
             )}
-        </div>
+          </div>
       </div>
    
     </>

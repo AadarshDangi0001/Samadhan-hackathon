@@ -227,13 +227,24 @@ html, body {
 
 .output {
   width: 100%;
-  min-height: 33vh;
+  min-height: 40vh;
   padding: 1vh 1vw;
   margin: 1vh auto;
   border-radius: 1rem;
   background-color: #A1D8FF;
   word-wrap: break-word;
+  box-sizing: border-box;
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-right: 1rem; /* room for scrollbar */
 }
+
+.output .output-content{white-space:pre-wrap;line-height:1.45;color:#052b2b;padding-right:0.5rem}
+
+.output-actions{display:inline-flex;gap:8px;margin-left:8px}
+.output-btn{background:#0b5cff;color:#fff;border:none;padding:6px 10px;border-radius:8px;cursor:pointer;font-weight:700}
+.output-btn.alt{background:#eef3fb;color:#0b3b3a}
+.output-btn:disabled{opacity:0.5;cursor:not-allowed}
 /* Tablet / Medium screens */
 
 

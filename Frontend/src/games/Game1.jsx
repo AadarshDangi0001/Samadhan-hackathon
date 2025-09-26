@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Game1.css";
+import ChatHeader from "../components/ChatHeader";
+import { useUser } from "../context/UserContext"; 
 
 const LEVELS = [
   {
@@ -79,7 +81,8 @@ const LEVELS = [
   },
 ];
 
-export default function Game1() {
+export default function Game1({title}) {
+  const { user,isDesktop  } = useUser(); 
   const [levelIndex, setLevelIndex] = useState(0);
   const level = LEVELS[levelIndex];
   const [code, setCode] = useState(level.starterCss);
@@ -209,6 +212,8 @@ export default function Game1() {
   };
 
   return (
+      <>
+    {isDesktop && <ChatHeader  title={title} />}
     <div className="game1-admain">
 
     
@@ -329,5 +334,6 @@ export default function Game1() {
       </div>
     </div>
     </div>
+    </>
   );
 }

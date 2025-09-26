@@ -28,6 +28,7 @@ export default function AsklyAI() {
   const [showCode, setShowCode] = useState(false);
   const [showResources, setShowResources] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [copyStatus, setCopyStatus] = useState("");
 
   const messagesEndRef = useRef(null);
 
@@ -169,6 +170,31 @@ export default function AsklyAI() {
       window.speechSynthesis.speak(speech);
       setIsSpeaking(true);
     }
+  };
+
+  const copyCodeToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(code || "");
+      setCopyStatus("Copied!");
+      setTimeout(() => setCopyStatus(""), 1800);
+    } catch (err) {
+      console.error("Copy failed", err);
+      setCopyStatus("Failed to copy");
+      setTimeout(() => setCopyStatus(""), 1800);
+    }
+  };
+
+  const downloadCodeFile = () => {
+    const content = code || "";
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `generated-code-${Date.now()}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
   };
 
   const handleLikeMessage = (message) => {
@@ -377,8 +403,23 @@ export default function AsklyAI() {
               display: isMobile ? (showCode ? "block" : "none") : "block",
             }}
           >
-            <h2>Generated Code</h2>
-            <pre className="adcode-editor">{code}</pre>
+            <div className="adcode-toolbar">
+              <h2 className="adcode-title">Generated Code</h2>
+              <div className="adcode-actions">
+                <button className="adcopy-button" onClick={copyCodeToClipboard} title="Copy code">
+                  Copy
+                </button>
+                <button className="addownload-button" onClick={downloadCodeFile} title="Download code">
+                  Download
+                </button>
+              </div>
+            </div>
+
+            <pre className="adcode-editor">
+              <code>{code && code.length ? code : "// No code generated yet"}</code>
+            </pre>
+
+            {copyStatus && <div className="adcopy-status">{copyStatus}</div>}
           </div>
 
           <div

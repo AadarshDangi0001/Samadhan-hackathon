@@ -1,0 +1,123 @@
+/* Game1 - FlexFrog styles */
+
+:root{
+	--bg: #e6f7ff;
+	--card: #ffffff;
+	--accent: #2db34a; /* green */
+	--accent-2: #ff993a;
+	--muted: #6b7280;
+	--shadow: 0 8px 30px rgba(16,24,40,0.08);
+	--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+}
+.game1-admain{
+   display: flex;
+   justify-content: end;
+}
+.game1-root{
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	
+	min-height: 80vh;
+}
+
+.game1-shell{
+	width: 1100px;
+	max-width: calc(100% - 2rem);
+	background: var(--bg);
+	border-radius: 14px;
+	padding: 1rem 1.25rem 1.5rem;
+	box-shadow: var(--shadow);
+}
+
+.game1-header{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:1rem;
+	margin-bottom: 1rem;
+}
+
+.game1-header h1{
+	margin:0;
+	font-size:1.4rem;
+	color:#073d2c;
+}
+
+.game1-progress{
+	background: linear-gradient(90deg,var(--accent-2), #ff6a6a);
+	color: white;
+	padding:0.5rem 0.8rem;
+	border-radius: 999px;
+	font-weight:700;
+}
+
+.game1-main{
+	display:grid;
+	grid-template-columns: 410px 1fr;
+	gap: 1rem;
+}
+
+.game1-left{display:flex;flex-direction:column;gap:0.9rem}
+
+.problem-card, .editor-card{
+	background: var(--card);
+	padding: 0.9rem;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(10,20,30,0.04);
+}
+
+.problem-card h2{margin:0 0 0.35rem 0;color:#06372b}
+.problem-desc{color:var(--muted);margin:0 0 0.6rem 0}
+
+.problem-actions{display:flex;gap:0.5rem;flex-wrap:wrap}
+.btn{background:var(--accent-2);color:white;padding:0.55rem 0.8rem;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+.btn.alt{background:#eef3fb;color:#06372b}
+.btn.hint{background:#fff7e6;color:#a85c00;border:1px solid rgba(0,0,0,0.04)}
+.btn:disabled{opacity:0.5;cursor:not-allowed}
+
+.hint-box{margin-top:0.6rem;padding:0.6rem;border-radius:8px;background:#fff9f0;color:#7a4a00}
+.status{margin-top:0.6rem;font-weight:700}
+
+.editor-card h3{margin:0 0 0.35rem 0}
+.code-editor{width:100%;min-height:160px;background:#0f1724;color:#dbeafe;border-radius:8px;padding:0.75rem;font-family:var(--mono);font-size:0.94rem;border:none;resize:vertical}
+.code-editor.small{min-height:80px}
+
+.controls-bottom{display:flex;gap:0.6rem;align-items:center;margin-top:0.6rem}
+.btn.next{background:#0ea5a4}
+.btn.download{margin-left:auto;background:#0b5cff}
+
+.game1-right{display:flex;flex-direction:column;gap:0.75rem}
+.board-wrap{background:linear-gradient(180deg,#c8f8ff 0%, #9feaf6 100%);border-radius:12px;padding:1rem;box-shadow:var(--shadow)}
+.board-info{color:#034d4a;font-weight:700;margin-bottom:0.6rem}
+
+.game-board{position:relative; height:420px; border-radius:10px; overflow:hidden; background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15), transparent 10%), linear-gradient(180deg,#89e0d7 0%, #49c6b8 100%); box-shadow: inset 0 8px 30px rgba(3,25,24,0.06);}
+
+.lily{position:absolute; top:50%; transform: translateX(-50%); width:64px; height:64px; display:flex; align-items:center; justify-content:center; pointer-events:none;}
+.lily span{font-size:32px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.18));}
+
+#frogs{position:absolute; left:4%; right:4%; top:0; bottom:0; display:flex; align-items:center; gap:12px; padding:1rem;}
+
+.frog{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background: linear-gradient(180deg,#68d45a,#2db34a);box-shadow:0 6px 18px rgba(17,24,24,0.18);transform-origin:center;}
+.frog-emoji{font-size:32px;transform:translateY(0);display:inline-block}
+
+.frog::after{content:"";position:absolute;width:54px;height:10px;bottom:-6px;background:rgba(0,0,0,0.06);border-radius:50%;filter:blur(6px)}
+
+.legend{margin-top:0.6rem;color:var(--muted);font-size:0.95rem}
+
+/* small helpers and responsiveness */
+.game1-main .problem-card{order:0}
+
+@media (max-width: 980px){
+	.game1-main{grid-template-columns:1fr;}
+	.game-board{height:320px}
+	.game1-shell{padding:0.75rem}
+}
+
+/* subtle animations */
+.frog{transition: transform 320ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms}
+.frog:hover{transform:translateY(-6px)}
+
+/* message colors */
+.status{color:#064e3b}
+

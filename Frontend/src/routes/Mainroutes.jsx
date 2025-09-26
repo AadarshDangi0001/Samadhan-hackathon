@@ -18,6 +18,7 @@ import Settings from "../components/Settings.jsx";
 import AsklyAI from "../pages/AsklyAI.jsx";
 import Games from "../pages/Games.jsx";
 import FaceExpressionDetector from "../pages/detect/FaceExpressionDetector.jsx";
+import Game1 from "../games/Game1.jsx";
 
 const Mainroutes = () => {
   return (
@@ -40,7 +41,13 @@ const Mainroutes = () => {
       <Route path="/askly-ai" element={<PrivateRoute><AsklyAI title="Askly-AI"/></PrivateRoute>} />
       <Route path="/games" element={<PrivateRoute><Games title="Games"/></PrivateRoute>} />
        <Route path="/emotion-tracker" element={<PrivateRoute><FaceExpressionDetector title="Emotion Tracker"/></PrivateRoute>} />
+    
+    {/* game route */}
+
+        <Route path="/game1" element={<PrivateRoute><Game1 title="Frog Game"/></PrivateRoute>} />
+   
     </Routes>
+    
   );
 };
 

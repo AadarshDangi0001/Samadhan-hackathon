@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Games.css';
 import ChatHeader from "../components/ChatHeader";
 import { useUser } from "../context/UserContext"; 
@@ -7,8 +8,14 @@ const Games = ({title}) => {
        const { user,isDesktop  } = useUser(); 
   const games = Array.from({ length: 8 }, (_, i) => `Game ${i + 1}`);
 
-  const handlePlay = (game) => {
-    // placeholder - you can wire this to actual game routes
+  const navigate = useNavigate();
+  const handlePlay = (game, idx) => {
+    // if Game 1 clicked, navigate to /game1 (route already exists)
+    if (idx === 0) {
+      navigate('/game1');
+      return;
+    }
+    // placeholder for other games
     alert(`${game} clicked — launch game here.`);
   };
 
@@ -65,7 +72,7 @@ const Games = ({title}) => {
             </div>
 
             <div className="ad-actions">
-              <button className="ad-play-button" onClick={() => handlePlay(g)}>Play {idx + 1}</button>
+              <button className="ad-play-button" onClick={() => handlePlay(g, idx)}>Play {idx + 1}</button>
             </div>
           </div>
         ))}

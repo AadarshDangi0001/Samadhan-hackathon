@@ -29,17 +29,15 @@ const About = ({title}) => {
       <div id="about-center">
         <h1>~About page</h1>
         <p id="about-text">
-        In most colleges, students face a common problem: getting clear and quick answers to their everyday queries. Whether it’s about fees, forms, schedules, scholarships, or events, students often spend hours standing in queues, searching through notice boards, or waiting for faculty responses. To make matters harder, most notices and circulars are shared only in English, which isn’t always easy for every student to understand. This creates delays, confusion, and stress in campus life.
+Welcome to Askly, the ultimate learning companion designed to transform your academic journey. We understand that traditional learning can be challenging, and that's why we’ve built a platform that caters to your individual needs with a holistic, technology-driven approach.
 
-ASKLY is designed to change that. It is a multilingual chatbot that makes communication between students and faculty simple, fast, and inclusive. Instead of waiting for answers, students can ask their questions anytime—through the college website or even WhatsApp—and receive instant, reliable support.
+At its core, Askly is a comprehensive learning platform offering a revolutionary new way to study. Our core feature provides line-by-line explanations for any topic, turning complex subjects into clear, understandable concepts. Say goodbye to confusion and wasted hours spent trying to decipher textbooks. With Askly, you get clarity, a foundation for true mastery. We believe that learning shouldn't be limited to what's on a page, which is why our rich repository of provided resources ensures you always have the right materials at your fingertips, whether you're studying for an exam or simply exploring a new subject out of curiosity.
 
-One of the biggest strengths of ASKLY is that it works in multiple languages. Students can use English, Hindi, or their regional language to ask queries, and the chatbot responds clearly. This ensures that no student is left behind due to language barriers. ASKLY can also explain notices or circulars in simple words and even help students draft polite, professional emails for faculty.
+We know that students are always on the move, so your learning should be too. Our voice explanation feature allows you to listen to detailed breakdowns of topics, making it easy to learn while you're commuting, exercising, or just taking a break from the screen. And because we understand that reliable internet isn't always available, our offline mode lets you download and access key content anytime, anywhere. Your learning never has to stop, even when your connection does.
 
-For students, ASKLY provides 24/7 guidance, saving valuable time and reducing stress. For faculty and staff, it cuts down repetitive questions and reduces workload by up to 70%, allowing them to focus on more meaningful tasks. At the same time, ASKLY promotes eco-friendly, paperless communication across the campus.
+What makes Askly truly unique is our commitment to a personalized, supportive experience. Our integrated WhatsApp bot acts as your instant study buddy, ready to answer quick questions, provide helpful tips, and offer support whenever you need it. This feature brings the help you need directly to a platform you already use every day, making support immediate and accessible.
 
-Our vision is to build smarter, more inclusive campuses across India—where every student has equal access to information and feels supported in their educational journey. With ASKLY, communication becomes seamless, inclusive, and stress-free.
 
-ASKLY is more than just a chatbot—it’s your campus assistant, always ready to help.
         </p>
       </div>
 

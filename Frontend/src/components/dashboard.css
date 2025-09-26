@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #E8FDFF;
+    overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+.dashboard {
+    min-height: 90vh; /* allow more if content grows */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #E8FDFF;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 6vh; /* 4rem ~ 6vh */
+    z-index: 1;
+}
+
+.container img {
+    height: 49vw; /* 11.5rem ~ 184px */
+}
+
+
+.container .dashchar {
+    position: absolute;
+    top: -8vw; /* -2.3rem ~ -37px */
+    right: 1vw; /* 1.3rem ~ 21px */
+    z-index: 5;
+}
+.container .bridge{
+    margin-left: 3vw;
+    position: absolute;
+    top: 10vw; /* 2rem ~ 32px */
+    left: 2.2vw; /* 3rem ~ 48px */
+    color: white;
+    font-size: 5vw;
+    font-family: Righteous;
+}
+.features {
+    width: 100%;
+    min-height: auto;
+}
+
+.features h3 {
+    margin-left: 6vw;
+     
+}
+
+.box-container {
+    width: 100%;
+    padding: 1.5vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw; 
+    flex-wrap: wrap;
+    margin-top: 3vh;
+}
+
+.box1 {
+  
+    width: 43vw; 
+    border-radius: 2vh;
+    background-color: #EFDEC2;
+    padding: 2vh;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+}
+
+.box1 h4 {
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.box1 p {
+    color: #3786F1;
+    font-size: 1.4vh;
+    font-weight: 400;
+}
+
+.box-container a {
+    text-decoration: none;
+    color: #191918;
+}
+
+/* Desktop / large screens */
+@media (min-width: 1000px) {
+   
+  
+
+
+
+   
+
+    .container {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        margin-top: 1vh;
+    }
+
+    .container .bgdash {
+        height: 50vh; /* 21rem ~ 336px */
+        width: 65vw;
+        margin-top: 1vh;
+        margin-left: 14vw;
+    }
+
+    .container .dashchar {
+        position: absolute;
+        top: -3vh;
+        right: 18%;
+        height: 90%;
+    }
+
+    .container .bridge {
+        font-size: 2em;
+        position: absolute;
+        left: 29vw;
+        top: 12vh; /* 5rem ~ 80px */
+        color: white;
+        font-family: Righteous;
+    }
+
+    .features {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .features h3 {
+        margin-left: 22vw;
+        font-size: 1.5em;
+        margin-top: -4vh;
+        margin-bottom: 2vh;
+    }
+
+    .box-container {
+        width: 100%;
+        padding-left: 17vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3vw;
+        flex-wrap: wrap;
+    }
+
+    .box1 {
+        height: 20vh; /* 10rem ~ 160px */
+        width: 16vw; /* 18em ~ 288px */
+        padding: 1.2em;
+        background-color: #EFDEC2;
+    }
+
+    .box1 h4 {
+        font-size: 2.5vh;
+        font-weight: 600;
+    }
+
+    .box-container a {
+        text-decoration: none;
+        color: #191918;
+    }
+
+    .box1 p {
+        font-size: 1.7vh;
+        font-weight: 500;
+    }
+}

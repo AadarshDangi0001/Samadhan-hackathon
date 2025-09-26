@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.signup-page {
+  height: 100vh;
+  width: 100vw;
+  background: #E8FDFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Signup container */
+.signup-container {
+  height: 70vh; 
+  width: 90vw;
+  background: #fff;
+  border-radius: 2vh;
+  box-shadow: 0 0 1vh rgba(16, 8, 8, 0.1); 
+  padding: 5vh 4vw; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Character image */
+.signup-cha {
+  position: absolute;
+  top: -11vh;
+  left: -2vw;
+  width: 35vw;
+  height: 24vh;
+}
+
+/* Logo */
+.signup-logo {
+  position: absolute;
+  top: -2vh;
+  right: 1vw;
+  width: 28vw;
+  height: 12vh;
+}
+
+/* Form */
+.signup-form {
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  position: relative;
+}
+
+.signup-form h2 {
+  margin-top: 2vh;
+}
+
+.signup-form p {
+  font-size: 0.9vh;
+  margin-top: -2vh;
+  opacity: 0.75;
+}
+
+.signup-name-row {
+  display: flex;
+  gap: 1vh;
+}
+
+.signup-input-box {
+  position: relative;
+  width: 100%;
+}
+
+.signup-input-box input {
+  width: 100%;
+  padding: 1vh 2vw; 
+  border: 0.1vh solid #999; 
+  border-radius: 1vh; 
+  outline: none;
+}
+
+.signup-input-box label {
+  position: absolute;
+  top: -0.5vh;
+  left: 1vw;
+  background: #fff;
+  padding: 0 0.3vw;
+  font-size: 0.9vh; 
+}
+
+.signup-password-box {
+  position: relative;
+}
+
+.signup-toggle-password {
+  position: absolute;
+  right: 1vw; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2vh; 
+}
+
+.signup-checkbox {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+  font-size: 1vh;
+  margin-top: 2vh;
+}
+
+.signup-checkbox span {
+  color: #FFB4B2;
+  cursor: pointer;
+}
+
+.error {
+  position: absolute;
+  top: 38vh;
+  width: 100%;
+}
+
+.signup-error {
+  color: red;
+  left: 0;
+  width: 100%;
+}
+
+button {
+  padding: 1.5vh; 
+  font-size: 2vh;
+  border: none;
+  border-radius: 1vh; 
+  background: #FF7E07;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e56e05;
+}
+
+.signup-login-link {
+  text-align: center;
+  font-size: 2vh;
+}
+
+.signup-login-link a {
+  color: #FFB4B2;
+  text-decoration: none;
+}
+
+.signup-with {
+  position: absolute;
+  bottom: -2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2vh;
+  width: 100%;
+  display: flex;
+  gap: 1vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1vw;
+}
+
+.signup-with .line {
+  height: 0.2vh; 
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.238);
+}
+
+.signup-with span {
+  width: 70%;
+  font-size: 1.2vh;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.signup-google {
+  position: absolute;
+  bottom: -8vh; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3vh;
+  border: 0.1vh solid #3869EB; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+}
+
+.signup-google img {
+  width: 2vh;
+  height: 2.2vh;
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .signup-container {
+    width: 60%;
+    height: 80vh; 
+    flex-direction: row;
+  }
+
+  .signup-cha {
+    width: 25vw;
+    height: 85vh;
+    top: 1vh;
+    left: 1vw;
+  }
+
+  /* Logo */
+  .signup-logo {
+    top: -2vh;
+    right: 0vw;
+    width: 15vw;
+    height: 16vh;
+  }
+
+  .signup-form {
+    top: 6vh;
+    right: 3vw;
+    width: 50%;
+    gap: 3vh;
+    position: absolute;
+  }
+    .signup-form p{
+    font-size: 1.5vh;
+   }
+  .signup-form label{
+    font-size: 1.5vh;
+  }
+   .signup-form input{
+    padding: 1.3vh;
+   }
+  .signup-google {
+    position: absolute;
+    bottom: -10vh;
+    width: 100%;
+  }
+
+  .error {
+    top: 35vh;
+    width: 100%;
+  }
+
+  .signup-error {
+    color: red;
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    width: 100%;
+  }
+
+  .signup-login-link p {
+    margin-top: -1vh;
+    font-size: 1.5vh;
+  }
+
+  .signup-with {
+    position: absolute;
+    bottom: -3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    gap: 1vh;
+    align-items: center;
+    padding: 0 1vw;
+  }
+
+  .signup-with .line {
+    height: 0.2vh; 
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.293);
+  }
+
+  .signup-with p {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5vh;
+  }
+}

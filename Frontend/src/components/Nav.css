@@ -1,0 +1,312 @@
+/* ====== Global NavBar CSS ====== */
+
+nav {
+    height: 10vh;
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+   
+}
+
+/* Sidebar (global, not tied to .dashboard anymore) */
+.right-sec {
+    width: 43%;
+    height: 100vh;
+    background-color: #191918;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+}
+
+/* Mobile navbar header */
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    align-items: center;
+    background-color: #191918;
+    position: relative;
+    z-index: 2100;
+}
+
+.navbar #ask {
+    margin-left: clamp(-8rem, -10vw, -10rem);
+    height: clamp(6rem, 8vw, 9rem);
+}
+
+.navbar .profile {
+    height: clamp(2rem, 2.5vw, 2.5rem);
+    border-radius: clamp(0.3rem, 0.5vw, 0.5rem);
+    object-fit: cover;
+}
+
+#menu {
+   color: white;
+   font-size: clamp(1.5rem, 2vw, 2rem);
+   cursor: pointer;
+   z-index: 1100;
+}
+
+.nav-right {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+    gap: clamp(0.5rem, 1vw, 10rem);
+}
+
+/* Sidebar profile/logo section */
+.right-sec .pic {
+    display: flex;
+    padding: clamp(0.3rem, 0.5vw, 0.5rem);
+    flex-direction: row;
+}
+
+.right-sec .pic i {
+    width: 100%;
+    color: white;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    object-fit: cover;
+    margin-top: clamp(1rem, 1.4vw, 1.4rem);
+    margin-left: clamp(0.8rem, 1vw, 1rem);
+}
+
+.right-sec .pic img {
+    height: clamp(4rem, 5vw, 6rem);
+    object-fit: cover;
+}
+
+/* Sidebar links container */
+.right-sec-container {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(0.8rem, 1vw, 1rem);
+    gap: clamp(0.5rem, 1vw, 10rem);
+    justify-content: center;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.right-sec-container p {
+    color: #FFFFFF;
+    opacity: 50%;
+    margin: clamp(0.3rem, 0.5vw, 0.5rem) 0;
+}
+
+.right-sec-container .main-text {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    margin-bottom: clamp(1.5rem, 2vw, 2rem);
+}
+
+.right-sec-container a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 0.5vw, 8px);
+    padding: clamp(8px, 1vw, 10px);
+    border-radius: clamp(6px, 0.5vw, 8px);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.right-sec-container a:hover {
+    background-color: #369FFF;
+    color: #fff;
+}
+
+/* Active nav link */
+.right-sec-container a.active {
+    background-color: #369FFF;
+    color: #fff !important;
+    border-radius: clamp(6px, 0.5vw, 8px);
+}
+
+.right-sec-container a.active i {
+    opacity: 100% !important;
+}
+
+/* Sidebar link groups */
+.right-sec-container .dash,
+.right-sec-container .chat-ai,
+.right-sec-container .bullet,
+.right-sec-container .docs,
+.right-sec-container .chat,
+.right-sec-container .help,
+.right-sec-container .about,
+.right-sec-container .offline,
+.upcoming-head .agent,
+.setting {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    color: #FFFFFF;
+    padding: clamp(0.2rem, 0.5vw, 0.5rem) clamp(0.3rem, 0.5vw, 0.5rem);
+}
+
+.right-sec-container .upcoming-head a,
+.upcoming-head a {
+    text-decoration: none;
+}
+
+/* Hover effects */
+.right-sec-container .dash:hover,
+.right-sec-container .chat-ai:hover,
+.right-sec-container .bullet:hover,
+.right-sec-container .docs:hover,
+.right-sec-container .chat:hover,
+.right-sec-container .help:hover,
+.right-sec-container .about:hover,
+.right-sec-container .offline:hover,
+.upcoming-head .agent:hover,
+.setting:hover {
+    background-color: #369FFF;
+    border-radius: clamp(0.3rem, 0.5vw, 0.5rem);
+    cursor: pointer;
+    opacity: 100%;
+}
+
+/* Icons opacity */
+.right-sec-container .dash i,
+.right-sec-container .chat-ai i,
+.right-sec-container .bullet i,
+.right-sec-container .docs i,
+.right-sec-container .chat i,
+.right-sec-container .help i,
+.right-sec-container .about i,
+.right-sec-container .offline i,
+.upcoming-head .agent i,
+.setting i {
+    opacity: 50%;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    margin-top: clamp(-0.2rem, -0.5vw, -0.2rem);
+    color: white;
+}
+
+.right-sec-container .dash i:hover,
+.right-sec-container .chat-ai i:hover,
+.right-sec-container .bullet i:hover,
+.right-sec-container .docs i:hover,
+.right-sec-container .chat i:hover,
+.right-sec-container .help i:hover,
+.right-sec-container .about i:hover,
+.right-sec-container .offline i:hover,
+.upcoming-head .agent i:hover,
+.setting i:hover {
+    opacity: 100%;
+}
+
+/* Upcoming head text */
+.upcoming-head {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    margin-top: 3vh;
+    margin-bottom: clamp(2rem, 2.5vw, 2.5rem);
+}
+
+/* ====== Desktop view ====== */
+@media (min-width: 1000px) {
+    nav{
+        z-index: 30000;
+
+    }
+    .right-sec {
+        width: 15%;
+        background-color: #191918;
+        display: flex;
+        flex-direction: column;
+        padding: 0 clamp(0.5rem, 1vw, 1rem);
+        height: 100vh;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .open-btn {
+        position: fixed;
+        top: clamp(15px, 2vw, 20px);
+        left: clamp(15px, 2vw, 20px);
+        padding: clamp(5px, 0.8vw, 8px) clamp(10px, 1.2vw, 15px);
+        background: black;
+        color: white;
+        border: none;
+        border-radius: clamp(4px, 0.5vw, 6px);
+        cursor: pointer;
+    }
+
+    .right-sec .pic {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: clamp(-0.8rem, -1vw, -1rem);
+    }
+
+    .right-sec-container {
+        font-size: clamp(0.6rem, 0.7vw, 0.7rem);
+    }
+
+    .right-sec-container .main-text {
+       gap: 1vh;
+
+    }
+     .right-sec-container .upcoming-head{
+        gap: 1vh;
+        margin-top: -4vh;
+     }
+       .settings-wrapper {
+  position: relative;
+}
+
+.logout-box {
+  position: absolute;
+  left: 15vh;
+  bottom: 8vh;
+  background: #fff;
+  border: 0.063rem solid #ddd; /* 1px */
+  border-radius: 0.75rem; /* 12px */
+  padding: 1rem; /* 16px */
+  width: 14rem; /* 224px */
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.15); /* 4px 12px */
+  z-index: 999;
+}
+
+.logout-box p {
+  margin-bottom: 0.75rem; /* 12px */
+  font-size: 0.875rem; /* 14px */
+  color: #333;
+  text-align: center;
+}
+
+.btn-logout {
+    background-color: #369FFF;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.875rem; /* 8px 14px */
+  border-radius: 0.375rem; /* 6px */
+  cursor: pointer;
+  margin-right: 0.5rem; /* 8px */
+  transition: background 0.3s;
+}
+
+
+
+.btn-cancel {
+  background: #f0f0f0;
+  border: none;
+  padding: 0.5rem 0.875rem; /* 8px 14px */
+  border-radius: 0.375rem; /* 6px */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-cancel:hover {
+  background: #ddd;
+}
+
+}

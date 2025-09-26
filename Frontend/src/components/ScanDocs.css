@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #E8FDFF;
+  overflow-x: hidden;
+}
+
+.ScanDocs {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #E8FDFF;
+  position: relative;
+  padding: 2vh 2vw;
+}
+
+
+.ScanDocs .scan-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+.ScanDocs .scan-container img{
+  height: 58vw;
+}
+.ScanDocs .scan-container .rec {
+
+  margin-top: -3vh;
+}
+
+.ScanDocs .scan-container .boy {
+  position: absolute;
+  top: -3vh;
+  left: 1vh;
+  
+  z-index: 5;
+}
+
+.ScanDocs .scan-container .bg-text {
+  position: absolute;
+  top:  11vw;
+  left: 41vw;
+  width: 53%;
+  font-family: 'Righteous', sans-serif;
+  font-size: 5.3vw;
+  color: white;
+  line-height: 1.2;
+  z-index: 10;
+}
+
+
+.files {
+  width: 99%;
+  padding: 2vh 2vw;
+  margin: 2vh auto;
+  border-radius: 1rem;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+    margin-top: -2vh;
+
+}
+
+.file-upload {
+  border: 2px solid orange;
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
+  height: 14vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.file-upload:hover {
+  background-color: #fff5e6;
+}
+
+.file-upload-icon {
+  font-size: 6vw;
+  margin-bottom: 0.5vh;
+  color: gray;
+  pointer-events: none;
+}
+
+.file-upload span {
+  font-size: 2vw;
+  color: gray;
+  pointer-events: none;
+}
+
+.orpara {
+  position: relative;
+  margin: 2vh 0;
+
+  display: flex;
+  gap: 3vh;
+}
+
+.orpara .line{
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.166);
+}
+.orpara .or {
+  font-size: 3vw;
+  font-weight: 100;
+  opacity: 0.5;
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0.5rem;
+}
+
+
+
+/* Camera Section */
+.camera {
+  background-color: #FFEAD6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1vh 1vw;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  min-height: 6vh;
+  transition: 0.3s ease;
+}
+
+.camera:hover {
+  background-color: #FFE0C4;
+}
+
+.camera i {
+  font-size: 5vw;
+  color: #FF7E07;
+}
+
+.camera .camtext {
+  font-size: 3vw;
+  color: #FF7E07;
+}
+
+/* Desktop camera button */
+.desktop-btn {
+  background-color: #FFEAD6;
+  color: #FF7E07;
+  padding: 1vh 1vw;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.2vw;
+  width: 100%;
+  min-height: 6vh;
+  margin-top: 2vh;
+  transition: 0.3s ease;
+}
+
+.desktop-btn:hover {
+  background-color: #ffd580;
+}
+
+/* Desktop camera view */
+.desktop-camera {
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.desktop-camera video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 0.5rem;
+}
+
+.desktop-controls {
+  display: flex;
+  gap: 1vw;
+  margin-top: 1vh;
+  justify-content: center;
+}
+
+.desktop-controls button {
+  padding: 0.5vh 1vw;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+/* Preview */
+.preview {
+  margin-top: 2vh;
+  text-align: center;
+}
+
+.preview img {
+  max-width: 100%;
+  max-height: 20vh;
+  border-radius: 0.5rem;
+}
+
+/* Output */
+.out-text p {
+  font-size: 5vw;
+  font-weight: 600;
+  margin-left: 2vw;
+  margin-top: 2vh;
+}
+
+.output {
+  width: 100%;
+  min-height: 33vh;
+  padding: 1vh 1vw;
+  margin: 1vh auto;
+  border-radius: 1rem;
+  background-color: #A1D8FF;
+  word-wrap: break-word;
+}
+/* Tablet / Medium screens */
+
+
+/* Desktop Layout */
+@media (min-width: 1000px) {
+  
+
+  .ScanDocs .scan-container {
+margin-top: 5vh;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 15vw;
+  }
+
+  .ScanDocs .scan-container .rec {
+  height: 43vh;
+
+   width: 45vw;
+   
+    margin-left: 2vw;
+  }
+
+  .ScanDocs .scan-container .boy {
+    top: -3vh;
+    left: 7vw;
+    height: 45vh;
+  }
+
+  .ScanDocs .scan-container .bg-text {
+    font-size: 2vw;
+    line-height: 3vw;
+    top: 8vh;
+    left: 25vw;
+    width: 20%;
+  }
+
+  .files {
+    position: absolute;
+    right: 5vw;
+    width: 26vw;
+  height: 32vh;
+    margin-top:8vh;
+  }
+
+  .file-upload-icon {
+    font-size: 3vh;
+  }
+
+  .file-upload span {
+    font-size: 0.7vw;
+  }
+
+  .camera .camtext, .camera i {
+    font-size: 1vh;
+  }
+
+  .desktop-btn {
+    font-size: 1vw;
+  }
+.orpara .or{
+  font-size: 1.8vh;
+}
+  .out-text p {
+    margin-left: 21vw;
+    margin-top: 1vh;
+    font-size: 1.5vw;
+  }
+
+  .output {
+    width: 77%;
+    margin-left: 20vw;
+    height: 20vh;
+    padding: 1vh 1vw;
+  }
+}

@@ -1,0 +1,305 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #E8FDFF;
+}
+
+/* PAGE */
+.login-page {
+  height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER */
+.login-container {
+ height: 60vh;
+  width: 80vw;
+  background: #fff;
+  border-radius: 1.6vh;
+  box-shadow: 0 0 0.6vw rgba(0, 0, 0, 0.1);
+  padding: 1vh 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4vh;
+  position: relative;
+}
+
+/* HEADER */
+.login-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO + IMAGE */
+.login-logo {
+  width: 38vw;
+
+}
+
+.login-bike {
+  width: 55vw;
+  margin-top: -7vh;
+}
+
+/* TITLES */
+.login-title {
+  font-size: 3vh;
+  font-weight: 600;
+  margin-top: -2vh;
+}
+
+.login-subtitle {
+  font-size: 1vh;
+  opacity: 0.6;
+  margin-top: -1.5vh;
+}
+
+/* FORM */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+.login-form label{
+  font-size: 1vh;
+}
+/* INPUT */
+.login-input-box {
+  position: relative;
+  width: 100%;
+}
+
+.login-input-box input {
+  width: 100%;
+  padding: 1.2vh 1vw;
+  border: 0.1vw solid #999;
+  border-radius: 0.8vh;
+  outline: none;
+  font-size: 1vw;
+}
+
+.login-input-box label {
+  position: absolute;
+  top: -0.4vh;
+  left: 1vw;
+  background: #fff;
+  padding: 0 0.3vw;
+  font-size: 0.9vh;
+  color: #555;
+}
+
+/* PASSWORD TOGGLE */
+.login-password-box {
+  position: relative;
+}
+
+.login-toggle-password {
+  position: absolute;
+  right: 1vw;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2vw;
+}
+
+/* CHECKBOX */
+.login-check {
+  display: flex;
+  align-items: center;
+  gap: 0.7vw;
+  font-size: 0.9vw;
+  flex-wrap: wrap;
+}
+
+.login-forget {
+  margin-left: auto;
+  color: #FF7E07;
+  font-size: 1vh;
+}
+
+/* ERROR */
+.login-error {
+  color: red;
+  margin-top: -1vh;
+  font-size: 1vh;
+}
+
+/* BUTTON */
+button {
+  padding: 1.2vh;
+  font-size: 1vw;
+  border: none;
+  border-radius: 0.8vh;
+  background: #FF7E07;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+
+/* SIGNUP LINK */
+.login-signup-link {
+  text-align: center;
+  font-size: 1vh;
+  margin-top: -1.5vh;
+}
+
+.login-signup-link a {
+  color: #FF7E07;
+  text-decoration: none;
+}
+
+/* LOGIN WITH DIVIDER */
+.login-with {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8vw;
+  opacity: 0.6;
+  font-size: 1vh;
+}
+
+.login-with .line {
+  height: 0.1vh;
+  flex: 1;
+  background: #00000030;
+}
+
+/* GOOGLE BUTTON */
+.login-google {
+  width: 100%;
+  border: 0.1vw solid #3869EB;
+  border-radius: 0.8vh;
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8vw;
+  cursor: pointer;
+}
+
+.login-google img {
+  width: 4vw;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .login-page {
+  height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-logo{
+width: 15vw;
+margin-top: -70vh;
+}
+  .login-container {
+    width: 60vw;
+    height: 80vh;
+    flex-direction: row;
+    padding: 4vh;
+    gap: 4vh;
+  }
+
+  .login-bike {
+    width: 30vw;
+    margin-left: 18vw;
+ 
+    height: auto;
+  }
+.login-title {
+ position: absolute;
+    font-size: 2vw;
+ top: 14vh;
+ margin-left: 2vw;
+}
+
+.login-subtitle {
+ position: absolute;
+ top: 20vh;
+ margin-left: 2.2vw;
+ font-size: 1.7vh;
+}
+
+  .login-form {
+    position: absolute;
+    left: 4vw;
+    top:23vh;
+    width: 50%;
+    gap: 3vh;
+  }
+
+  .login-check .login-forget {
+    font-size: 1vw;
+    margin-left: auto;
+  }
+
+  
+  .login-form .login-check label{
+  font-size: 2vh;
+}
+  .login-form  label{
+  font-size: 1.3vh;
+  margin-top: -2px;
+}
+.login-signup-link {
+  text-align: center;
+  font-size: 1.5vh;
+  margin-top: -1.5vh;
+}
+
+.login-signup-link a {
+  color: #FF7E07;
+  text-decoration: none;
+}
+
+/* LOGIN WITH DIVIDER */
+.login-with {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8vw;
+  opacity: 0.6;
+  font-size: 1.3vh;
+}
+
+.login-with .line {
+  height: 0.1vh;
+  flex: 1;
+  background: #00000030;
+} 
+
+/* GOOGLE BUTTON */
+.login-google {
+  width: 100%;
+  border: 0.1vw solid #3869EB;
+  border-radius: 0.8vh;
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8vw;
+  cursor: pointer;
+}
+
+.login-google img {
+  width: 1.2vw;
+ 
+}
+}

@@ -1,0 +1,94 @@
+/* =========================
+   📱 Mobile First (default)
+   ========================= */
+
+/* Parent container */
+#about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* hide left & right images by default */
+#about-left,
+#about-right {
+  display: none;
+}
+
+#about-center {
+  max-width: 90%;
+  margin: 2rem 0;
+}
+#about-center h1{
+    font-size: 1.4rem;
+    margin-left: -13rem;
+}
+#about-text {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* =========================
+   💻 Tablet View (≥ 769px)
+   ========================= */
+@media (min-width: 769px) {
+  #about-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  #about-left,
+  #about-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  #about-center {
+    max-width: 60%;
+    margin: 0;
+    text-align: left;
+  }
+
+  #about-img {
+    width: 10rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+}
+
+/* =========================
+   🖥️ Desktop View (≥ 1025px)
+   ========================= */
+@media (min-width: 1025px) {
+  #about-container {
+    margin-left: 8rem;
+    gap: 4rem;
+    padding: 4rem 8%;
+  }
+
+  #about-img {
+    width: 10rem;
+    margin-top: -2rem;
+  }
+   #about-right .img6kid{
+    width: 10rem;
+  }
+#about-center h1{
+    display: none;
+}
+  #about-text {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}

@@ -1,0 +1,645 @@
+
+.adchatmain{
+    width: 85%;
+}
+
+.ad{
+    width: 100%;
+    /* background-color: #007bff; */
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}   
+
+.adchat-header {
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    /* background-color: #000000; */
+    border: none;
+  }
+
+  .adchat-header h2 {
+    font-size: 24px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .adchat-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .adchat-right i {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .adchat-right i:hover {
+    color: #ff7926;
+  }
+
+  .adhey-img {
+    display: flex;
+    align-items: center;
+  }
+
+  .adhey-img img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .adchat-header-left {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .adchat-header-left i {
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .adchat-header-left i:hover {
+    color: #ff7926;
+  }
+
+  .adchat-header-left button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .adchat-header-left button i {
+    cursor: pointer;
+    color: white;
+    font-size: 22px;
+  }
+
+  .adcontainer{
+    height: 88vh;
+    display: flex;
+    /* background-color: #000000; */
+    padding: 2vh;
+    gap: 2vh;
+       font-family: "Nunito", sans-serif;
+      font-optical-sizing: auto;
+  
+      font-style: normal;
+  }
+
+  .adchatbot-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #2a75ff; */
+       background-color: #CAECFF;
+    padding: 1rem;
+    /* border-right: 1px solid #333; */
+    border-radius: 1vw;
+  }
+  
+
+  
+  .adchatbot-header h2 {
+    color: #fff;
+  }
+  
+ 
+  
+  
+  
+  .adchat-messages {
+    border-radius: 1vw;
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    /* background-color: var(--dark-bg); */
+    /* max-height: 100vh; */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+  }
+  
+  .admessage {
+    /* max-width: 60%; */
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    position: relative;
+  }
+  
+  .admessage.adbot-message {
+  background-color: #FF993A;
+    /* text-align: right; */
+  }
+  
+  .admessage.aduser-message {
+    background-color: #8a95dd;
+    text-align: right !important;
+  }
+  
+  .admessage-time {
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-align: right;
+  }
+  
+  /* VS Code-like Editor Section (70%) */
+  .adeditor-container {
+    width: 70%;
+    padding: 1rem;
+     background-color: #CAECFF;
+    border-radius: 1vw;
+  }
+  
+  .adcode-editor {
+    width: 100%;
+    height: 95%;
+    background-color: #a5bed7;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+  
+  .adcode-editor span {
+    color: #f78c6c; /* keywords */
+  }
+  
+  .adcode-editor .adfunction {
+    color: #61dafb;
+  }
+  
+  .adcode-editor .advariable {
+    color: #e5e5e5;
+  }
+  
+  .adtyping-indicator span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #aaa;
+    margin-right: 3px;
+    border-radius: 50%;
+    animation: typing 1s infinite;
+  }
+  
+  .adtyping-indicator span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .adtyping-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .adtyping-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  .admessage-content p {
+    white-space: pre-wrap;
+  }
+  
+  .adcode {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+  }
+  
+  /* Input Section (Bottom) */
+  .adchat-input-container {
+    display: flex;
+    padding: 0.5rem;
+    background-color: #e5e5e5;
+    border-radius: 2vw;
+    border: 1px solid #b4b2b2;
+  }
+  
+  .adchat-input {
+    flex: 1;
+    padding: 0.8rem 0.5rem;
+    border: 1px solid #444;
+    border-radius: 20px;
+    background-color: #e5e5e5;
+    color: var(--text-color);
+    margin-right: 0.5rem;
+  }
+  
+  .adchat-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .adsend-button {
+   
+    background-color: var(--primary-color);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    font-weight: 500;
+    background-color: #ff9c2a;
+    font-size: 1.2vw;
+  }
+  
+  .adsend-button:hover {
+    background-color: #2a75ff;
+  }
+  
+  .advoice-input-button {
+    padding: 0.5rem;
+  background-color: #ff9c2a;
+    color: rgb(19, 19, 19);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+  
+  .advoice-input-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .advoice-input-button:hover {
+    background-color: #45a049;
+  }
+  
+  
+  @keyframes typing {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  
+  
+  
+  
+  .adspeaker-buttons {
+    display: flex;
+    gap: 2vh;
+    justify-content: space-between;
+    
+  }
+  
+  .adspeaker-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #a0a0a1 !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+  }
+  
+  .adspeaker-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  
+  .adspeech-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .adspeech-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .adspeech-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .adresources-container {
+    border-radius: 1vw;
+    padding: 10px;
+    /* border-left: 2px solid #ccc; */
+    /* background-color: #f9f9f9; */
+   background-color: #CAECFF;
+  }
+  
+  .adresources-content {
+   
+    padding: 5px;
+  }
+  
+  .adresource-item {
+    margin-bottom: 15px;
+  }
+  .admic{
+    font-size: 1.5vw;
+  }
+  .adresource-item h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .adresource-link {
+    color: #007bff;
+    text-decoration: none;
+    word-wrap: break-word;
+  }
+  
+  .adresource-link:hover {
+    text-decoration: underline;
+  }
+  .adliked-section {
+    position: relative;
+  }
+  
+  .adliked-dropdown {
+    position: absolute;
+    top: 35px;
+    right: 50px;
+    width: 260px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999;
+  }
+  
+  .adliked-dropdown h4 {
+    margin-bottom: 10px;
+    color: #ff6b6b;
+    font-size: 16px;
+  }
+  
+ 
+  .adlike-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .adlike-button:hover {
+    transform: scale(1.2);
+  }
+
+  .admessage-time{
+    padding-left: 2vh;
+  }
+
+  .admobile-toggle-buttons {
+    display: none;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .adtoggle-button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #1c16d5;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .adtoggle-button i {
+    font-size: 1.2rem;
+  }
+
+  .adtoggle-button.adactive {
+    background-color: #ff7926;
+  }
+
+  .adtoggle-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  /* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+
+    .adchatmain{
+    width: 100%;
+}
+
+.ad{
+    width: 100%;
+    /* background-color: #007bff; */
+    height: 100%;
+    /* display: flex;
+    justify-content: end; */
+}   
+    .adchatmain {
+      height: auto;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .adchat-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0 16px;
+      height: 60px;
+    }
+
+    .adchat-header h2 {
+      font-size: 20px;
+    }
+
+    .adchat-right {
+      gap: 12px;
+    }
+
+    .adchat-right i {
+      font-size: 22px;
+    }
+
+    .adhey-img img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .adchat-header-left {
+      gap: 16px;
+    }
+
+    .adchat-header-left i {
+      font-size: 20px;
+    }
+
+    .adcontainer {
+      flex-direction: column;
+      height: auto;
+      min-height: 92vh;
+      padding: 1vh;
+      gap: 2vh;
+    }
+
+    .adchatbot-container {
+      width: 100%;
+      height: 87vh;
+      min-height: 400px;
+      padding: 1rem;
+    }
+
+    .admobile-toggle-buttons {
+      display: flex;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .adchat-messages {
+      height: calc(100% - 60px);
+      max-height: none;
+      overflow-y: auto;
+    }
+
+    .adeditor-container {
+      width: 100% !important;
+      height: 50vh;
+      min-height: 300px;
+      padding: 1rem;
+    }
+
+    .adresources-container {
+      width: 100% !important;
+      height: auto;
+      min-height: 200px;
+      padding: 1rem;
+    }
+
+    .admessage {
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      max-width: 85%;
+    }
+
+    .admessage.aduser-message {
+      margin-left: auto;
+    }
+
+    .admessage.adbot-message {
+      margin-right: auto;
+    }
+
+    .adchat-input-container {
+      padding: 1rem;
+      position: sticky;
+      bottom: 0;
+      background-color: #000000;
+    }
+
+    .adchat-input {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+
+    .adspeaker-buttons {
+      display: none;
+    }
+
+    .adliked-dropdown {
+      right: 0;
+      width: 250px;
+    }
+
+    .adcode-editor {
+      font-size: 14px;
+      padding: 1rem;
+      height: calc(100% - 40px);
+    }
+
+    .adresources-content {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    .admic {
+      font-size: 4vw;
+    }
+
+    .advoice-input-button {
+      padding: 0.8rem;
+    }
+  }
+  
+  /* Styles for small phones */
+  @media (max-width: 480px) {
+    .adchat-header h2 {
+      font-size: 6vw;
+    }
+
+    .adchat-right i {
+      font-size: 6vw;
+    }
+    .adchat-right h2{
+      font-size: 17px;
+    }
+
+    .adchat-header-left i {
+      font-size: 5vw;
+    }
+
+    .admessage {
+      font-size: 0.85rem;
+      padding: 0.5rem 0.7rem;
+    }
+
+    .adchat-input {
+      font-size: 0.85rem;
+    }
+
+    .adcode-editor {
+      font-size: 11px;
+    }
+  }

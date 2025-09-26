@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #E8FDFF;
+}
+
+/* Main container */
+.bullets {
+    width: 100%;
+    height: 100vh;
+    padding: 1vh 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Bullet board container */
+.bullets .bullet-container {
+    width: 100%;
+   
+    background-color: #CAECFF;
+    border-radius: 1rem;
+    position: relative;
+    padding: 2vh 2vw;
+}
+
+/* Background rectangle */
+.bullets .bullet-container .pic-bg {
+    position: relative;
+    
+}
+.bullets .bullet-container img{
+    height: 58vw;
+     margin-left: -5vw;
+}
+/* Large rectangle image */
+/*  */
+
+/* Run image */
+.bullet-container .pic-bg .run {
+    position: absolute;
+    top: -6vw;
+    left: 3vw;
+    z-index: 111;
+}
+
+.bullet-container .pic-bg .run .run-kid {
+    width: 45vw;
+    height: 63vw;
+
+}
+
+/* Text overlay */
+.bullet-container .texting {
+    position: absolute;
+    top: 14vw;
+    left: 37vw;
+    width: 61%;
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 4vw;
+    line-height: 1.5em;
+    font-weight: 700;
+    z-index: 111;
+}
+
+/* Cards wrapper */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Individual card */
+.cards1 {
+    background: #FFF6ED;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1);
+    padding: 2vh 5vw;
+    width: 100%;
+  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 43vw;
+}
+
+.cards1:hover {
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* Card heading */
+.card-heading {
+    font-size: 2.5vh;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Card text */
+.card-text {
+    font-size: 1.6vh;
+    color: #555;
+    line-height: 1.4;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Read more button */
+.read-more-btn {
+    background: #FF7E07;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    align-self: flex-start;
+    transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: #ff9400;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+    .bullet-container .texting {
+        font-size: 2vw;
+        width: 60%;
+        top: 10%;
+        left: 12%;
+    }
+
+    .cards1 {
+        /* min-height: 14rem; */
+        width: 40%;
+    }
+}
+
+@media (min-width: 1000px) {
+    
+
+    
+    .bullets .bullet-container {
+        width: 87%;
+margin-left: 15vw;  
+      padding: 3vh 3vw;
+      margin-top: -1vh;
+    }
+    .bullets .bullet-container .rec {
+         display: block; /* ensures height is applied correctly */
+    width: 74vw;
+    height: 50vh; /* try larger than before */
+    margin-left: 2vw;
+    }
+
+    .bullet-container .pic-bg .run {
+        left: 12vw;
+        top: -6vh;
+    }
+
+    .bullet-container .pic-bg .run img {
+        width: 15vw;
+        max-width: 220px;
+    }
+    .bullet-container .pic-bg .run .run-kid{
+        height: 55vh;
+       top: -3vh;
+    }
+
+    .bullets .bullet-container .texting {
+        left: 35%;
+        top: 6vw;
+        width: 45%;
+        font-size: 1.8vw;
+        line-height: 2.8rem;
+        margin-left: 10vh;
+    }
+
+    
+
+    .cards1 {
+        width: 22rem;
+        padding: 2vh 2vw;
+        height: 12vw;
+       
+    }
+}

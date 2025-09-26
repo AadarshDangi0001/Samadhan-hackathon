@@ -47,7 +47,7 @@ const Dashboard = ({ title }) => {
                 <NavLink to="/whatsapp-bot" className="box1">
                   <h4>WhatsApp Bot</h4>
                   <h1>03</h1>
-                  <p>Connect with humans</p>
+                  <p>Now Use AI Easly</p>
                 </NavLink>
                 <NavLink to='/scan-docs' className="box1">
                   <h4>Scan Docs</h4>

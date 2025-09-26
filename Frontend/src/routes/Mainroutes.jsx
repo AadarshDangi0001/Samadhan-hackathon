@@ -19,6 +19,7 @@ import AsklyAI from "../pages/AsklyAI.jsx";
 import Games from "../pages/Games.jsx";
 import FaceExpressionDetector from "../pages/detect/FaceExpressionDetector.jsx";
 import Game1 from "../games/Game1.jsx";
+import Game2 from "../games/Game2.jsx";
 
 const Mainroutes = () => {
   return (
@@ -45,6 +46,7 @@ const Mainroutes = () => {
     {/* game route */}
 
         <Route path="/game1" element={<PrivateRoute><Game1 title="Frog Game"/></PrivateRoute>} />
+        <Route path="/game2" element={<PrivateRoute><Game2 title="Target Game"/></PrivateRoute>} />
    
     </Routes>
     

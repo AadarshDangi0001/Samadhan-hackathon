@@ -103,7 +103,7 @@ const ScanDocs = ({ title }) => {
       }
 
       // POST to backend post API which creates a post and returns caption
-      const uploadResponse = await fetch("http://localhost:3000/api/post", {
+      const uploadResponse = await fetch("https://samadhan-hackathon.onrender.com/api/post", {
         method: "POST",
         body: formData,
         // include cookies for auth (backend sets token cookie)

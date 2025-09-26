@@ -15,6 +15,17 @@ router.post('/test', (req, res) => {
     });
 });
 
+// Debug endpoint (guarded by env flag)
+if (process.env.DEBUG_AUTH === 'true') {
+    router.get('/debug', (req, res) => {
+        res.json({
+            message: 'Auth debug',
+            cookies: req.cookies,
+            headers: req.headers,
+        });
+    });
+}
+
 router.post('/register', registerUser );
 router.post('/login', loginUser );
 router.post('/logout', logoutUser );

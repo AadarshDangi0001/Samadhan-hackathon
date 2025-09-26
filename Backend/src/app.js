@@ -7,6 +7,9 @@ import cors from 'cors';
 
 const app = express();
 
+// Trust proxy (needed for secure cookies behind proxies like Render)
+app.set('trust proxy', 1);
+
 // Debug middleware to log all requests
 app.use((req, res, next) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
@@ -18,14 +21,22 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Enhanced CORS configuration for production
-app.use(cors({
-    origin: [
-        'https://askmatic.vercel.app',
-        'http://localhost:5173', // for local development
-        'http://localhost:3000',
-        'https://localhost:5173'
-    ], 
+// Enhanced CORS configuration for production with dynamic allowlist
+const allowedOrigins = [
+    'https://askmatic.vercel.app',
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://localhost:5173'
+];
+
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true); // allow non-browser clients
+        const isAllowed = allowedOrigins.includes(origin) || /https:\/\/.+\.vercel\.app$/.test(origin);
+        if (isAllowed) return callback(null, true);
+        console.warn('Blocked by CORS:', origin);
+        return callback(new Error('Not allowed by CORS'));
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: [
@@ -33,12 +44,12 @@ app.use(cors({
         'X-Requested-With',
         'Content-Type',
         'Accept',
-        'Authorization',
-        'Cookie'
+        'Authorization'
     ],
     exposedHeaders: ['Set-Cookie'],
-    optionsSuccessStatus: 200 // for legacy browser support
-}));
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 

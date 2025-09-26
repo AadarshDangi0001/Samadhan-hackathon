@@ -21,7 +21,13 @@ export const registerUser = async (req, res) => {
             });
         }
 
-        const { fullName: { firstName, lastName }, email, password } = req.body;
+    let { fullName: { firstName, lastName }, email, password } = req.body;
+
+    // Normalize inputs
+    firstName = String(firstName || '').trim();
+    lastName = String(lastName || '').trim();
+    email = String(email || '').toLowerCase().trim();
+    password = String(password || '');
 
         if (!firstName || !lastName) {
             console.log("Register validation failed - missing first/last name");
@@ -36,6 +42,11 @@ export const registerUser = async (req, res) => {
             return res.status(400).json({ message: "Invalid email format" });
         }
 
+        if (password.length < 6) {
+            console.log("Register validation failed - weak password");
+            return res.status(400).json({ message: "Password must be at least 6 characters" });
+        }
+
         console.log("Checking for existing user with email:", email);
         const existingUser = await userModel.findOne({ email });
         if (existingUser) {
@@ -43,7 +54,7 @@ export const registerUser = async (req, res) => {
             return res.status(400).json({ message: "User already exists" });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = new userModel({
             fullName: {
@@ -72,14 +83,18 @@ export const registerUser = async (req, res) => {
         };
 
         res.cookie("token", token, cookieOptions);
-        res.status(201).json({
+        const payload = {
             message: "User registered successfully",
             user: {
                 id: newUser._id,
                 fullName: newUser.fullName,
                 email: newUser.email,
             },
-        });
+        };
+        if (process.env.EXPOSE_TOKEN_ON_LOGIN === 'true') {
+            payload.token = token;
+        }
+        res.status(201).json(payload);
 
     } catch (error) {
         console.error("Error registering user:", error);
@@ -100,7 +115,11 @@ export const loginUser = async (req, res) => {
         console.log("Login attempt - Request body:", req.body);
         console.log("Login attempt - Content-Type:", req.get('Content-Type'));
         
-        const { email, password } = req.body;
+        let { email, password } = req.body;
+
+        // Normalize
+        email = String(email || '').toLowerCase().trim();
+        password = String(password || '');
 
         // Input validation
         if (!email || !password) {
@@ -147,14 +166,18 @@ export const loginUser = async (req, res) => {
 
         console.log("Setting cookie with options:", cookieOptions);
         res.cookie("token", token, cookieOptions);
-        res.status(200).json({
+        const payload = {
             message: "Login successful",
             user: {
                 id: user._id,
                 fullName: user.fullName,
                 email: user.email,
             },
-        });
+        };
+        if (process.env.EXPOSE_TOKEN_ON_LOGIN === 'true') {
+            payload.token = token;
+        }
+        res.status(200).json(payload);
 
 
 

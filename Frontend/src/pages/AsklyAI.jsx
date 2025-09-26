@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import "./AsklyAi.css";
 // import { useUser } from "../context/UserContext"; // keep if needed
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const apiUrl = import.meta.env.VITE_API_URL || "https://samadhan-hackathon.onrender.com";
 
 export default function AsklyAI() {
   const { currentUser, logout } = useAuth();

@@ -57,7 +57,7 @@ body {
 
 /* TITLES */
 .login-title {
-  font-size: 5vh; /* increased for better readability on mobile */
+  font-size: 3vh;
   font-weight: 600;
   margin-top: -2vh;
 }
@@ -89,7 +89,7 @@ body {
   border: 0.1vw solid #999;
   border-radius: 0.8vh;
   outline: none;
-  font-size: 1vw;
+  font-size: 4vw;
 }
 
 .login-input-box label {
@@ -198,6 +198,10 @@ button {
 }
 
 @media (min-width: 1024px) {
+  .login-input-box input {
+
+  font-size: 1vw;
+}
   .login-page {
   height: 100vh;
   

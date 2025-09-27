@@ -58,7 +58,7 @@ const Signup = () => {
 
       if (response.data?.user) {
           toast.success("Account created successfully!");
-        setTimeout(() => navigate("/"), 1000);
+        setTimeout(() => navigate("/login"), 1000);
 
       } else {
         setError(response.data?.message || "Signup failed");

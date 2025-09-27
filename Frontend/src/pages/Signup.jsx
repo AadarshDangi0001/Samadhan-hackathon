@@ -7,6 +7,8 @@ import signupCha from "../assets/singupCha.png";
 import LoginLogo from "../assets/LoginLogo.png";
 import googleLogo from "../assets/Google__G__logo.webp";
 import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "../context/AuthContext";
+import { useUser } from "../context/UserContext";
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -21,6 +23,8 @@ const Signup = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
+  const { updateUser } = useUser();
 
   const handleChange = (e) => {
     const { id, value, type, checked } = e.target;
@@ -57,9 +61,16 @@ const Signup = () => {
       );
 
       if (response.data?.user) {
-          toast.success("Account created successfully!");
-        setTimeout(() => navigate("/login"), 1000);
-
+        // Auto-login UX: set auth state and user, then go home
+        const u = response.data.user;
+        login();
+        updateUser({
+          name: `${u.fullName?.firstName || ""} ${u.fullName?.lastName || ""}`.trim(),
+          email: u.email,
+          profilePic: u.profilePic || u.profilePicture,
+        });
+        toast.success("Account created successfully!");
+        setTimeout(() => navigate("/"), 500);
       } else {
         setError(response.data?.message || "Signup failed");
       }

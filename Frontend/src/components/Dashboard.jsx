@@ -79,10 +79,10 @@ const Dashboard = ({ title }) => {
                   <h1>04</h1>
                   <p>Get summary</p>
                 </NavLink>
-                <NavLink to='/scan-docs' className="box1">
-                  <h4>Scan Docs</h4>
+                <NavLink to='/emotion-tracker' className="box1">
+                  <h4>Emotion Tracker</h4>
                   <h1>05</h1>
-                  <p>Scan your Docs</p>
+                  <p>Track Emotion</p>
                 </NavLink>
                 <NavLink to='/about' className="box1">
                   <h4>About App</h4>

@@ -58,30 +58,31 @@ const Dashboard = ({ title }) => {
             ) : (
               // Mobile view → Show all 6
               <>
+                <NavLink to="/askly-ai" className="box1">
+                  <h4>Askly AI</h4>
+                  <h1>01</h1>
+                  <p>Not just copy code ,learn it</p>
+                </NavLink>
                 <NavLink to="/chat-ai" className="box1">
                   <h4>Chat AI</h4>
-                  <h1>01</h1>
+                  <h1>02</h1>
                   <p>24/7 available</p>
                 </NavLink>
-                <NavLink to="/bulletin" className="box1">
-                  <h4>Bullet Board</h4>
-                  <h1>02</h1>
-                  <p>New Updates</p>
-                </NavLink>
-                <NavLink to="/volunteers-help" className="box1">
-                  <h4>Volunteers Help</h4>
+
+                <NavLink to="/whatsapp-bot" className="box1">
+                  <h4>WhatsApp Bot</h4>
                   <h1>03</h1>
-                  <p>Connect with humans</p>
+                  <p>Now Use AI Easly</p>
                 </NavLink>
                 <NavLink to='/scan-docs' className="box1">
                   <h4>Scan Docs</h4>
                   <h1>04</h1>
                   <p>Get summary</p>
                 </NavLink>
-                <NavLink to='/whatsapp-bot' className="box1">
-                  <h4>WhatsApp Bot</h4>
+                <NavLink to='/scan-docs' className="box1">
+                  <h4>Scan Docs</h4>
                   <h1>05</h1>
-                  <p>Gets on your WhatsApp</p>
+                  <p>Scan your Docs</p>
                 </NavLink>
                 <NavLink to='/about' className="box1">
                   <h4>About App</h4>

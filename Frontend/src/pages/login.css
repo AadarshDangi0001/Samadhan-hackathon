@@ -57,7 +57,7 @@ body {
 
 /* TITLES */
 .login-title {
-  font-size: 3vh;
+  font-size: 5vh; /* increased for better readability on mobile */
   font-weight: 600;
   margin-top: -2vh;
 }
